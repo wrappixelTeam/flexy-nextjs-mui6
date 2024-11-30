@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 
 // mui imports
-import { ListItemIcon, ListItem, List, styled, ListItemText, useTheme } from '@mui/material';
+import { ListItemIcon, ListItemButton, List, styled, ListItemText, useTheme } from '@mui/material';
 import { useSelector } from '@/store/hooks';
 import { AppState } from '@/store/store';
 
@@ -37,7 +37,7 @@ const NavItem = ({ item, level, pathDirect, onClick }: ItemType) => {
   const itemIcon =
     level > 1 ? <Icon stroke={1.5} size="1rem" /> : <Icon stroke={1.5} size="1.1rem" />;
 
-  const ListItemStyled2 = styled(ListItem)(() => ({
+  const ListItemStyled2 = styled(ListItemButton)(() => ({
     padding: '5px 10px',
     gap: '10px',
     borderRadius: `${customizer.borderRadius}px`,

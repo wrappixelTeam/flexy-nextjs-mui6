@@ -42,7 +42,7 @@ export default function RootLayout({
 
   const { data: session } = useSession();
 
-  if(session){
+  if (session) {
     return (
       <MainWrapper>
         <title>Flexy NextJs 14.0.3 Material UI Dashboard</title>
@@ -77,13 +77,13 @@ export default function RootLayout({
             {/* ------------------------------------------- */}
             {/* PageContent */}
             {/* ------------------------------------------- */}
-  
+
             <Box sx={{ minHeight: "calc(100vh - 170px)" }}>
               {/* <Outlet /> */}
               {children}
               {/* <Index /> */}
             </Box>
-  
+
             {/* ------------------------------------------- */}
             {/* End Page */}
             {/* ------------------------------------------- */}

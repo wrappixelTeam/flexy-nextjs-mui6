@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, CardContent, Typography, Button, Grid } from "@mui/material";
+import { Card, CardContent, Typography, Button, Grid2 as Grid } from "@mui/material";
 import Image from "next/image";
 
 import user1 from "/public/images/backgrounds/u2.jpg";
@@ -32,18 +32,18 @@ const blogs = [
 
 const BlogCard = () => {
   return (
-    <Grid container spacing={3}>
+    (<Grid container spacing={3}>
       {blogs.map((blog, index) => (
         <Grid
           key={index}
-          item
-          xs={12}
-          lg={4}
           sx={{
             display: "flex",
             alignItems: "stretch",
           }}
-        >
+          size={{
+            xs: 12,
+            lg: 4
+          }}>
           <Card
             sx={{
               p: 0,
@@ -86,7 +86,7 @@ const BlogCard = () => {
           </Card>
         </Grid>
       ))}
-    </Grid>
+    </Grid>)
   );
 };
 

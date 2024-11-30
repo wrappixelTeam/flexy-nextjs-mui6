@@ -2,7 +2,7 @@ import { FC, useState } from "react";
 import {
   Fab,
   Drawer,
-  Grid,
+  Grid2 as Grid,
   Slider,
   Divider,
   styled,
@@ -99,7 +99,7 @@ const Customizer: FC = () => {
   ];
 
   return (
-    <div>
+    (<div>
       {/* ------------------------------------------- */}
       {/* --Floating Button to open customizer ------ */}
       {/* ------------------------------------------- */}
@@ -213,7 +213,7 @@ const Customizer: FC = () => {
             </Typography>
             <Grid container spacing={2}>
               {thColors.map((thcolor) => (
-                <Grid item xs={4} key={thcolor.id}>
+                <Grid key={thcolor.id} size={4}>
                   <StyledBox onClick={() => dispatch(setTheme(thcolor.disp))}>
                     <Tooltip title={`${thcolor.disp}`} placement="top">
                       <Box
@@ -391,7 +391,7 @@ const Customizer: FC = () => {
           </Box>
         </Scrollbar>
       </Drawer>
-    </div>
+    </div>)
   );
 };
 

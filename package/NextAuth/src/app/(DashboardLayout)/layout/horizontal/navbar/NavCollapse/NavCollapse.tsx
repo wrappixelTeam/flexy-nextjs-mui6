@@ -35,7 +35,7 @@ interface NavCollapseProps {
 const NavCollapse = ({ menu, level, pathWithoutLastPart, pathDirect, hideMenu }: NavCollapseProps) => {
   const Icon = menu.icon;
   const theme = useTheme();
-  const  pathname  = usePathname();
+  const pathname = usePathname();
   const [open, setOpen] = React.useState(false);
   const customizer = useSelector((state: AppState) => state.customizer);
   const menuIcon =
@@ -70,7 +70,7 @@ const NavCollapse = ({ menu, level, pathWithoutLastPart, pathDirect, hideMenu }:
     '&:hover > .SubNav': { display: 'block' },
   }));
 
-  const ListSubMenu = styled(Box)(() => ({
+  const ListSubMenu = styled((props: any) => <Box {...props} />)(() => ({
     display: 'none',
     position: 'absolute',
     top: level > 1 ? `0px` : '35px',
@@ -98,7 +98,7 @@ const NavCollapse = ({ menu, level, pathWithoutLastPart, pathDirect, hideMenu }:
           level={level + 1}
           pathWithoutLastPart={pathWithoutLastPart}
           pathDirect={pathDirect}
-          hideMenu={hideMenu} onClick={undefined}        />
+          hideMenu={hideMenu} onClick={undefined} />
       );
     } else {
       return (
@@ -109,7 +109,7 @@ const NavCollapse = ({ menu, level, pathWithoutLastPart, pathDirect, hideMenu }:
           pathDirect={pathDirect}
           hideMenu={hideMenu} onClick={function (): void {
             throw new Error('Function not implemented.');
-          } }        />
+          }} />
       );
     }
   });
